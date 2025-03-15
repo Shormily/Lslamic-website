@@ -89,7 +89,7 @@ const Navbar = () => {
   }, [placeholder, isDeleting, speed, index]);
 
   return (
-    <div className='bg-[#023020] sticky top-0 z-20'>
+    <div className='bg-gradient-to-r from-green-900 to-black sticky top-0 z-20'>
       <nav className="flex  justify-between items-center max-container padding-container relative max-w-[1550px] m-auto px-4">
         <Link href="/" className='text-white flex gap-2 justify-center items-center m-auto pl-2'>
           <Image
