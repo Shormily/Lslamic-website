@@ -30,10 +30,27 @@ const Banner = () => {
     }
   }, [swiperInstance]);
 
+  
+
   return (
     <div className={`${creteRound.variable} font-serif`}>
-      <div className="relative w-full h-[500px] md:h-[600px] bg-[url('/asset/banner-bg.webp')] bg-cover bg-center bg-no-repeat">
-        <div className="max-w-[1200px] pt-24 m-auto flex justify-center items-center">
+
+      <div className="relative w-full h-[700px] md:h-[700px] bg-[url('/asset/banner-bg.webp')] bg-cover bg-center bg-no-repeat">
+        <div className="py-16">
+        <Image src="/asset/kalma.png" alt="Kalma" width={400} height={100} className="text-center items-center m-auto py-2 h-24" />
+        <div className="max-w-[1500px] m-auto flex justify-center items-center">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000 }}
+            onSwiper={setSwiperInstance} // Save Swiper instance for updating refs
+          >   
           <Swiper
             modules={[Navigation, Autoplay]}
             spaceBetween={30}
@@ -46,33 +63,81 @@ const Banner = () => {
             autoplay={{ delay: 3000 }}
             onSwiper={setSwiperInstance} // Save Swiper instance for updating refs
           >
-            {[1, 2, 3].map((slide) => (
-              <SwiperSlide key={slide}>
-                <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-24 items-center">
-                  <Image src={`/asset/slide${slide}.webp`} alt={`Slide ${slide}`} width={300} height={300} />
+             
+              <SwiperSlide>
+                  <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-24 items-center">
+                    <div className="mx-12"><Image src="/asset/slide2.webp" alt="" width={300} height={300} className="w-3/4 h-4/4" /></div>
+                  
                   <div>
-                    <Image src="/asset/kalma.png" alt="Kalma" width={400} height={100} className="w-full h-auto" />
-                    <p className="text-yellow-500 font-bold text-3xl">O’ Allah We Believe</p>
-                    <h2 className="text-white font-bold text-5xl">Invited to The Home Of Peace</h2>
+                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16" />
+                    <p className="text-yellow-500 font-bold text-5xl py-4">O’ Allah We Believe</p>
+                    <h2 className="text-white font-semibold text-4xl">That Only You Can
+                      <br />
+                      <span className="my-3"> Save Us</span>        
+                    </h2>
+                    <button type="button" class="text-white bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-md px-5 py-1.5 text-center me-2 mb-2 text-[18px] my-3">Learn more</button>
+                  </div>
+                </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-12 items-center">
+                    <div><Image src="/asset/al.png" alt="" width={300} height={300} className="w-2/4 h-3/4" /></div>
+                  
+                  <div>
+                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16" />
+                    <p className="text-yellow-500 font-bold text-5xl py-4">O’ Allah We Believe</p>
+                    <h2 className="text-white font-semibold text-4xl">That Only You Can
+                      <br />
+                      <span className="my-3"> Save Us</span>        
+                    </h2>
+                    <button type="button" class="text-white bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-md px-5 py-1.5 text-center me-2 mb-2 text-[18px] my-3">Learn more</button>
                   </div>
                 </div>
               </SwiperSlide>
-            ))}
+              <SwiperSlide>
+                <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-12 items-center">
+                  <Image src="/asset/slide3.webp" alt="" width={300} height={300} className="w-2/4" />
+                  <div>
+                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16" />
+                    <p className="text-yellow-500 font-bold text-5xl py-4">O’ Allah We Believe</p>
+                    <h2 className="text-white font-semibold text-4xl">That Only You Can
+                      <br />
+                      <span className="my-3"> Save Us</span>        
+                    </h2>
+                    <button type="button" class="text-white bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-md px-5 py-1.5 text-center me-2 mb-2 text-[18px] my-3">Learn more</button>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-24 items-center">
+                  <Image src="/asset/slide4.webp" alt="" width={300} height={300} className="w-3/4 h-4/4" />
+                  <div>
+                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16" />
+                    <p className="text-yellow-500 font-bold text-5xl py-4">O’ Allah We Believe</p>
+                    <h2 className="text-white font-semibold text-4xl">That Only You Can
+                      <br />
+                      <span className="my-3"> Save Us</span>        
+                    </h2>
+                    <button type="button" class="text-white bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-md px-5 py-1.5 text-center me-2 mb-2 text-[18px] my-3">Learn more</button>
+                  </div>
+                </div>
+              </SwiperSlide>
           </Swiper>
+          </Swiper>
+          {/* Navigation Buttons */}
+          <div className="absolute bottom-12 right-8 flex gap-2 z-10 justify-end">
+            <button ref={prevRef} className="custom-prev bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
+              <FaArrowLeftLong size={16} />
+            </button>
+            <button ref={nextRef} className="custom-next bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
+              <FaArrowRightLong size={16} />
+            </button>
+          </div>
         </div>
-
-        {/* Navigation Buttons */}
-        <div className="absolute bottom-12 right-8 flex gap-2 z-10 justify-end">
-  <button ref={prevRef} className="custom-prev bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
-    <FaArrowLeftLong size={16} />
-  </button>
-  <button ref={nextRef} className="custom-next bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
-    <FaArrowRightLong size={16} />
-  </button>
-</div>
-
+        </div>
       </div>
     </div>
+
   );
 };
 

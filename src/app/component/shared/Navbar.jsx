@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <div className={`${creteRound.variable} font-serif`}> <div className='bg-gradient-to-r from-green-900 to-black sticky top-0 z-20'>
-    <nav className="flex max-w-[1200px] m-auto px-4 py-3 justify-between items-center">
+    <nav className="flex max-w-[1500px] m-auto px-4 py-3 justify-between items-center">
       {/* Logo */}
       <Link href="/" className='flex items-center gap-2 text-white'>
         <Image src='/asset/icon.png' width={50} height={50} alt="Logo" />
@@ -31,7 +31,7 @@ const Navbar = () => {
       </Link>
 
       {/* Desktop Menu */}
-      <ul className="hidden lg:flex gap-8 text-white  ">
+      <ul className="hidden lg:flex gap-8 text-white text-[19px] ">
         <li><Link href="/" className="hover:text-yellow-500">Home</Link></li>
         <li><Link href="/event" className="hover:text-yellow-500">Event</Link></li>
         <li><Link href="/service" className="hover:text-yellow-500">Service</Link></li>
