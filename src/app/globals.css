@@ -6,6 +6,12 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/fonts/your-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -13,6 +19,7 @@
     --foreground: #ededed;
   }
 }
+
 
 body {
   color: var(--foreground);
