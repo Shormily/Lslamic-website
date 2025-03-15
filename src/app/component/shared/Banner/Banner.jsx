@@ -1,23 +1,32 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import Image from "next/image";
 import React, { useEffect } from "react";
+import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 
 const Banner = () => {
   useEffect(() => {
     document.querySelector(".custom-next")?.classList.add("swiper-button-next");
     document.querySelector(".custom-prev")?.classList.add("swiper-button-prev");
+
+    // Hide default Swiper navigation icons
+    const style = document.createElement("style");
+    style.innerHTML = `
+      .swiper-button-next::after, .swiper-button-prev::after {
+        display: none !important;
+      }
+    `;
+    document.head.appendChild(style);
   }, []);
 
   return (
     <div className="relative w-full h-[500px] md:h-[600px] bg-[url('/asset/banner-bg.webp')] bg-cover bg-center bg-no-repeat">
       <div className="max-w-[1200px] pt-24 m-auto flex justify-center items-center">
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Navigation, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
           navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
@@ -60,14 +69,16 @@ const Banner = () => {
       </div>
 
       {/* Navigation Buttons (Bottom Center) */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
-        <button className="custom-prev bg-yellow-500 text-white w-12 h-12 flex items-center justify-center rounded-md shadow-md transition-all duration-300 hover:bg-yellow-600 hover:scale-110">
-          ❮
-        </button>
-        <button className="custom-next bg-yellow-500 text-white w-12 h-12 flex items-center justify-center rounded-md shadow-md transition-all duration-300 hover:bg-yellow-600 hover:scale-110">
-          ❯
-        </button>
-      </div>
+      <div className="absolute bottom-12 right-10 flex gap-2 z-10">
+  <button className="custom-prev bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
+    <FaArrowLeftLong size={16} />
+  </button>
+  <button className="custom-next bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
+    <FaArrowRightLong size={16} />
+  </button>
+</div>
+
+
     </div>
   );
 };
