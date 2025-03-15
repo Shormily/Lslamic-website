@@ -7,13 +7,14 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
-import { Merriweather } from "next/font/google";
+import { Crete_Round } from "next/font/google";
 
-const merriweather = Merriweather({
+const creteRound = Crete_Round({
   subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  variable: "--font-merriweather",
+  weight: ["400"], // Crete Round only has a weight of 400
+  variable: "--font-crete-round",
 });
+
 
 const Banner = () => {
   const prevRef = useRef(null);
@@ -30,7 +31,7 @@ const Banner = () => {
   }, [swiperInstance]);
 
   return (
-    <div className={`${merriweather.variable} font-sans`}>
+    <div className={`${creteRound.variable} font-serif`}>
       <div className="relative w-full h-[500px] md:h-[600px] bg-[url('/asset/banner-bg.webp')] bg-cover bg-center bg-no-repeat">
         <div className="max-w-[1200px] pt-24 m-auto flex justify-center items-center">
           <Swiper

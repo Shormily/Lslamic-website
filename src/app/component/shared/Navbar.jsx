@@ -7,12 +7,12 @@ import { FaRegUser, FaTimes, FaBars } from "react-icons/fa";
 import Link from 'next/link';
 import Image from 'next/image';
 import { RiMenu2Line } from 'react-icons/ri';
-import { Merriweather } from "next/font/google";
+import { Crete_Round } from "next/font/google";
 
-const merriweather = Merriweather({
+const creteRound = Crete_Round({
   subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  variable: "--font-merriweather",
+  weight: ["400"], // Crete Round only has a weight of 400
+  variable: "--font-crete-round",
 });
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`${merriweather.variable} font-sans`}> <div className='bg-gradient-to-r from-green-900 to-black sticky top-0 z-20'>
+    <div className={`${creteRound.variable} font-serif`}> <div className='bg-gradient-to-r from-green-900 to-black sticky top-0 z-20'>
     <nav className="flex max-w-[1200px] m-auto px-4 py-3 justify-between items-center">
       {/* Logo */}
       <Link href="/" className='flex items-center gap-2 text-white'>
@@ -31,7 +31,7 @@ const Navbar = () => {
       </Link>
 
       {/* Desktop Menu */}
-      <ul className="hidden lg:flex gap-8 text-white uppercase ">
+      <ul className="hidden lg:flex gap-8 text-white  ">
         <li><Link href="/" className="hover:text-yellow-500">Home</Link></li>
         <li><Link href="/event" className="hover:text-yellow-500">Event</Link></li>
         <li><Link href="/service" className="hover:text-yellow-500">Service</Link></li>
