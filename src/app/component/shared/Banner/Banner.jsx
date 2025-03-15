@@ -35,22 +35,12 @@ const Banner = () => {
   return (
     <div className={`${creteRound.variable} font-serif`}>
 
-      <div className="relative w-full h-[700px] md:h-[700px] bg-[url('/asset/banner-bg.webp')] bg-cover bg-center bg-no-repeat">
-        <div className="py-16">
-        <Image src="/asset/kalma.png" alt="Kalma" width={400} height={100} className="text-center items-center m-auto py-2 h-24" />
+<div className="relative w-full sm:h-screen  md:h-[750px] bg-green-950 md:bg-[url('/asset/banner-bg.webp')] bg-cover bg-center bg-no-repeat">
+
+        <div className="md:py-16 sm:py-2">
+        <Image src="/asset/kalma.png" alt="Kalma" width={400} height={100} className="text-center items-center m-auto py-2 h-24 " />
         <div className="max-w-[1500px] m-auto flex justify-center items-center">
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000 }}
-            onSwiper={setSwiperInstance} // Save Swiper instance for updating refs
-          >   
+          
           <Swiper
             modules={[Navigation, Autoplay]}
             spaceBetween={30}
@@ -65,11 +55,12 @@ const Banner = () => {
           >
              
               <SwiperSlide>
-                  <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-24 items-center">
-                    <div className="mx-12"><Image src="/asset/slide2.webp" alt="" width={300} height={300} className="w-3/4 h-4/4" /></div>
+                  <div className="grid md:grid-cols-2 sm:grid-cols-1 md:gap-24 sm:gap-2  px-4">
+                  <div className="mx-12 ">
+                    <Image src="/asset/slide2.webp" alt="" width={300} height={300} className="md:w-3/4 sm:w-40 h-4/4 justify-center items-center md:m-1 sm:m-auto" /></div>
                   
-                  <div>
-                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16" />
+                  <div className="justify-center items-center m-auto md:text-justify sm:text-center">
+                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16 justify-center items-center md:m-1 sm:m-auto" />
                     <p className="text-yellow-500 font-bold text-5xl py-4">O’ Allah We Believe</p>
                     <h2 className="text-white font-semibold text-4xl">That Only You Can
                       <br />
@@ -80,11 +71,12 @@ const Banner = () => {
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-12 items-center">
-                    <div><Image src="/asset/al.png" alt="" width={300} height={300} className="w-2/4 h-3/4" /></div>
+                  <div className="grid md:grid-cols-2 sm:grid-cols-1 md:gap-24 sm:gap-2  px-4">
+                  <div className="mx-12 ">
+                    <Image src="/asset/al.png" alt="" width={300} height={300} className="md:w-3/4 h-3/4 sm:w-40 justify-center items-center md:m-1 sm:m-auto" /></div>
                   
-                  <div>
-                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16" />
+                  <div className="justify-center items-center m-auto md:text-justify sm:text-center">
+                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16 justify-center items-center md:m-1 sm:m-auto" />
                     <p className="text-yellow-500 font-bold text-5xl py-4">O’ Allah We Believe</p>
                     <h2 className="text-white font-semibold text-4xl">That Only You Can
                       <br />
@@ -95,10 +87,11 @@ const Banner = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-12 items-center">
-                  <Image src="/asset/slide3.webp" alt="" width={300} height={300} className="w-2/4" />
-                  <div>
-                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16" />
+                <div className="grid md:grid-cols-2 sm:grid-cols-1 md:gap-24 sm:gap-2 px-4">
+                <div className="mx-12 ">  <Image src="/asset/slide3.webp" alt="" width={300} height={300} className="md:w-2/4 sm:w-40 justify-center items-center md:m-1 sm:m-auto" /></div>
+                
+                  <div className="justify-center items-center m-auto md:text-justify sm:text-center">
+                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16 justify-center items-center md:m-1 sm:m-auto" />
                     <p className="text-yellow-500 font-bold text-5xl py-4">O’ Allah We Believe</p>
                     <h2 className="text-white font-semibold text-4xl">That Only You Can
                       <br />
@@ -109,10 +102,12 @@ const Banner = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-24 items-center">
-                  <Image src="/asset/slide4.webp" alt="" width={300} height={300} className="w-3/4 h-4/4" />
-                  <div>
-                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16" />
+                <div className="grid md:grid-cols-2 sm:grid-cols-1 md:gap-24 sm:gap-2 px-4">
+                  <div className="mx-12 ">
+                    <Image src="/asset/slide4.webp" alt="" width={300} height={300} className="md:w-3/4 sm:w-96 h-4/4" />
+                  </div>
+                  <div className="justify-center items-center m-auto md:text-justify sm:text-center">
+                    <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16 justify-center items-center md:m-1 sm:m-auto" />
                     <p className="text-yellow-500 font-bold text-5xl py-4">O’ Allah We Believe</p>
                     <h2 className="text-white font-semibold text-4xl">That Only You Can
                       <br />
@@ -123,7 +118,7 @@ const Banner = () => {
                 </div>
               </SwiperSlide>
           </Swiper>
-          </Swiper>
+          
           {/* Navigation Buttons */}
           <div className="absolute bottom-12 right-8 flex gap-2 z-10 justify-end">
             <button ref={prevRef} className="custom-prev bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
