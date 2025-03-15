@@ -61,14 +61,15 @@ const Banner = () => {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-          <button ref={prevRef} className="custom-prev bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
-            <FaArrowLeftLong size={16} />
-          </button>
-          <button ref={nextRef} className="custom-next bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
-            <FaArrowRightLong size={16} />
-          </button>
-        </div>
+        <div className="absolute bottom-12 right-8 flex gap-2 z-10 justify-end">
+  <button ref={prevRef} className="custom-prev bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
+    <FaArrowLeftLong size={16} />
+  </button>
+  <button ref={nextRef} className="custom-next bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
+    <FaArrowRightLong size={16} />
+  </button>
+</div>
+
       </div>
     </div>
   );
