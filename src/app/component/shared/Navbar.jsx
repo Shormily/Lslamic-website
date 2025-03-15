@@ -10,12 +10,14 @@ import { FaBars } from "react-icons/fa";
 import Link from 'next/link';
 import Image from 'next/image';
 import { RiMenu2Line } from 'react-icons/ri';
+import { Merriweather } from "next/font/google";
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--font-merriweather", // Custom CSS variable for Tailwind
+})
 
 const Navbar = () => {
-  const placeholderText = "Search for medicines, doctors, and more...";
-  const [inputValue, setInputValue] = useState('');
-  const [message, setMessage] = useState('');
-
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -32,98 +34,31 @@ const Navbar = () => {
     setIsUserMenuOpen(!isUserMenuOpen);
   };
 
-  const handleClickOutside = (event) => {
-    if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
-      setIsUserMenuOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    if (isUserMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isUserMenuOpen]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (inputValue.trim().toLowerCase() === 'arrimart') {
-      setMessage('Successfully get a 30% discount on this product.');
-    } else {
-      setMessage('Fail: You are not getting the discount.');
-    }
-  };
-
-  const [placeholder, setPlaceholder] = useState('');
-  const placeholders = ["Search medicines or buy now", "Search healthcare medicine", "Find doctors"];
-  const [index, setIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [speed, setSpeed] = useState(150);
-
-  useEffect(() => {
-    const handleTyping = () => {
-      setPlaceholder((prev) =>
-        isDeleting
-          ? placeholders[index].substring(0, prev.length - 1)
-          : placeholders[index].substring(0, prev.length + 1)
-      );
-
-      if (!isDeleting && placeholder === placeholders[index]) {
-        setTimeout(() => setIsDeleting(true), 1000);
-        setSpeed(50);
-      } else if (isDeleting && placeholder === '') {
-        setIsDeleting(false);
-        setIndex((prev) => (prev + 1) % placeholders.length);
-        setSpeed(150);
-      }
-    };
-
-    const typingInterval = setInterval(handleTyping, speed);
-    return () => clearInterval(typingInterval);
-  }, [placeholder, isDeleting, speed, index]);
-
+  
   return (
-    <div className='bg-gradient-to-r from-green-900 to-black sticky top-0 z-20'>
-      <nav className="flex  justify-between items-center max-container padding-container relative max-w-[1550px] m-auto px-4">
+<div className={`${merriweather.variable} font-sans`}>
+<div className='bg-gradient-to-r from-green-900  to-black sticky top-0 z-20'>
+      <nav className="flex max-w-[1200px]  max-container padding-container relative max-w-[1550px] m-auto px-4">
         <Link href="/" className='text-white flex gap-2 justify-center items-center m-auto pl-2'>
           <Image
-            src='/asset/logo.png'
+            src='/asset/icon.png'
             width={50}
             height={50}
             alt="Logo"
             className="py-2"
           />
-          <p className='text-bold text-2xl'>BioCare</p>
+          <p className='text-bold text-2xl'>Islam</p>
         </Link>
         {/* Desktop Menu */}
-        <ul className="hidden h-full gap-12 lg:flex items-center w-full">
-          <form className='flex-grow px-60 py-4' onSubmit={handleSubmit}>
-            <div className="relative flex items-center w-full">
-              <input
-                type="search"
-                id="search"
-                className="block w-full p-3 outline-none ps-4 text-sm text-gray-900 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                value={inputValue}
-                onChange={handleInputChange}
-                placeholder={placeholder}
-                required
-              />
-              <button
-                type="submit"
-                className="text-[#ea580c] absolute right-2.5 bottom-2.5 bg-[#fff] font-semibold rounded-lg text-sm px-4 mb-1"
-                onClick={handleInputChange}
+        <ul className="hidden h-full gap-12 lg:flex items-center ">
+        <li className="">
+              <p
+                
+                to="/"
               >
-                <IoSearch size={20} />
-              </button>
-            </div>
-            {message && <p style={{ marginTop: '20px', fontSize: '16px', color: '#dc2626' }}>{message}</p>}
-          </form>
+                About
+              </p>
+            </li>
         </ul>
 
         {/* Desktop Icons */}
@@ -169,24 +104,7 @@ const Navbar = () => {
             <p className='text-bold text-2xl text-[#000]'>BioCare</p>
           </Link>
           <div className='px-12'>
-            <div className="relative my-8 items-center w-full">
-              <input
-                type="search"
-                id="search"
-                className="block w-full p-3 outline-none ps-4 text-sm text-gray-900 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                value={inputValue}
-                onChange={handleInputChange}
-                placeholder={placeholder}
-                required
-              />
-              <button
-                type="submit"
-                className="text-[#ea580c] absolute right-2.5 bottom-2.5 bg-[#fff] font-semibold rounded-lg text-sm px-4 mb-1"
-                onClick={handleInputChange}
-              >
-                <IoSearch size={20} />
-              </button>
-            </div>
+           {/* create code */}
           </div>
           <div className="flex gap-4 justify-center items-center m-auto">
             <button className="hover:text-orange-500">
@@ -208,7 +126,9 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </div>
+    </div>  
+</div>
+    
   );
 };
 

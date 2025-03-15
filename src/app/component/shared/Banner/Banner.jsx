@@ -1,85 +1,75 @@
 "use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
+import { Merriweather } from "next/font/google";
+
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--font-merriweather",
+});
 
 const Banner = () => {
-  useEffect(() => {
-    document.querySelector(".custom-next")?.classList.add("swiper-button-next");
-    document.querySelector(".custom-prev")?.classList.add("swiper-button-prev");
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
-    // Hide default Swiper navigation icons
-    const style = document.createElement("style");
-    style.innerHTML = `
-      .swiper-button-next::after, .swiper-button-prev::after {
-        display: none !important;
-      }
-    `;
-    document.head.appendChild(style);
-  }, []);
+  useEffect(() => {
+    if (swiperInstance) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] bg-[url('/asset/banner-bg.webp')] bg-cover bg-center bg-no-repeat">
-      <div className="max-w-[1200px] pt-24 m-auto flex justify-center items-center">
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-        >
-          <SwiperSlide>
-            <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-24 items-center">
-              <Image src="/asset/slide1.webp" alt="Slide 1" width={300} height={300} />
-              <div>
-                <Image src="/asset/kalma.png" alt="Kalma" width={400} height={100} className="w-full h-auto" />
-                <p className="text-yellow-500 font-bold text-3xl">O’ Allah We Believe</p>
-                <h2 className="text-white font-bold text-5xl">Invited to The Home Of Peace</h2>
-              </div>
-            </div>
-          </SwiperSlide>
+    <div className={`${merriweather.variable} font-sans`}>
+      <div className="relative w-full h-[500px] md:h-[600px] bg-[url('/asset/banner-bg.webp')] bg-cover bg-center bg-no-repeat">
+        <div className="max-w-[1200px] pt-24 m-auto flex justify-center items-center">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000 }}
+            onSwiper={setSwiperInstance} // Save Swiper instance for updating refs
+          >
+            {[1, 2, 3].map((slide) => (
+              <SwiperSlide key={slide}>
+                <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-24 items-center">
+                  <Image src={`/asset/slide${slide}.webp`} alt={`Slide ${slide}`} width={300} height={300} />
+                  <div>
+                    <Image src="/asset/kalma.png" alt="Kalma" width={400} height={100} className="w-full h-auto" />
+                    <p className="text-yellow-500 font-bold text-3xl">O’ Allah We Believe</p>
+                    <h2 className="text-white font-bold text-5xl">Invited to The Home Of Peace</h2>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
-          <SwiperSlide>
-            <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-24 items-center">
-              <Image src="/asset/slide2.webp" alt="Slide 2" width={300} height={300} />
-              <div>
-                <Image src="/asset/kalma.png" alt="Kalma" width={400} height={100} className="w-full h-auto" />
-                <p className="text-yellow-500 font-bold text-3xl">O’ Allah We Believe</p>
-                <h2 className="text-white font-bold text-5xl">Invited to The Home Of Peace</h2>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-24 items-center">
-              <Image src="/asset/slide3.png" alt="Slide 3" width={300} height={300} />
-              <div>
-                <Image src="/asset/kalma.png" alt="Kalma" width={400} height={100} className="w-full h-auto" />
-                <p className="text-yellow-500 font-bold text-3xl">O’ Allah We Believe</p>
-                <h2 className="text-white font-bold text-5xl">Invited to The Home Of Peace</h2>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+        {/* Navigation Buttons */}
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+          <button ref={prevRef} className="custom-prev bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
+            <FaArrowLeftLong size={16} />
+          </button>
+          <button ref={nextRef} className="custom-next bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
+            <FaArrowRightLong size={16} />
+          </button>
+        </div>
       </div>
-
-      {/* Navigation Buttons (Bottom Center) */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-         <button className="custom-prev bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
-    <FaArrowLeftLong size={16} />
-  </button>
-  <button className="custom-next bg-[#E6AC41] text-white w-10 h-10 flex items-center justify-center rounded-sm shadow-md transition-all duration-300 hover:bg-[#D99A2B]">
-    <FaArrowRightLong size={16} />
-  </button>
-</div>
-
-
-
     </div>
   );
 };
