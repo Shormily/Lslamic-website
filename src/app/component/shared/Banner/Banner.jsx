@@ -9,6 +9,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import { Crete_Round } from "next/font/google";
 import AboutUS from "@/app/about/page";
+import History from "../History/page";
 
 const creteRound = Crete_Round({
   subsets: ["latin"],
@@ -140,7 +141,7 @@ const Banner = () => {
         </div>
       </div>
       <div className="md:-mt-16 sm:-mt-8 relative z-10 px-4">
-        <AboutUS />
+        <History />
       </div>
     </div>
 

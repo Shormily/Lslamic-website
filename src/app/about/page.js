@@ -3,29 +3,11 @@ import React from 'react';
 import { MdOutlineWifiCalling3 } from "react-icons/md";
 
 const AboutUS = () => {
-    const prayerTimes = [
-        { name: "FAJAR", time: "5:10 am" },
-        { name: "SUNRISE", time: "6:30 am" },
-        { name: "ZUHR", time: "12:36 pm" },
-        { name: "ASR", time: "4:15 pm" },
-        { name: "MAGHRIB", time: "6:15 pm" },
-        { name: "ISHA’A", time: "4:10 am" },
-    ];
+   
 
     return (
         <>
-            <section>
-                <div className="text-white bg-gradient-to-r from-green-950 to-green-900  max-w-[1500px] mx-auto w-full text-white rounded-[30px]  md:py-8 shadow-lg relative">
-                    <div className="grid grid-cols-2 md:grid-cols-6 gap-4 text-center py-4">
-                        {prayerTimes.map((prayer, index) => (
-                            <div key={index} className="flex flex-col items-center">
-                                <p className="font-serif text-lg md:text-2xl font-bold">{prayer.name}</p>
-                                <p className="text-sm md:text-base font-semibold">{prayer.time}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+          
 
 
             {/* About us section */}
@@ -64,7 +46,9 @@ const AboutUS = () => {
             </div></section>
             
             
-           
+            <div className="md:-mt-16 sm:-mt-8 relative z-10 px-4">
+                  
+                       </div>
 
         </>
 

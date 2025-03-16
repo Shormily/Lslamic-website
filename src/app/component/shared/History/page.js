@@ -1,13 +1,33 @@
+import AboutUS from '@/app/about/page';
 import Image from 'next/image';
 import React from 'react';
 
 const History = () => {
+    const prayerTimes = [
+        { name: "FAJAR", time: "5:10 am" },
+        { name: "SUNRISE", time: "6:30 am" },
+        { name: "ZUHR", time: "12:36 pm" },
+        { name: "ASR", time: "4:15 pm" },
+        { name: "MAGHRIB", time: "6:15 pm" },
+        { name: "ISHA’A", time: "4:10 am" },
+    ];
     return (
         <>
-            <section><div className='grid md:grid-cols-2 sm:grid-cols-1 gap-24 max-w-[1500px] mx-auto'>
-                           <div>
-                               <Image src="/asset/slide3.png" alt="" width={4000} height={4000} className="md:w-3/4 sm:w-40 h-4/4 justify-center items-center md:m-1 sm:m-auto" />
-                           </div>
+              <section>
+                            <div className="text-white bg-gradient-to-r from-green-950 to-green-900  max-w-[1500px] mx-auto w-full text-white rounded-[30px]  md:py-8 shadow-lg relative">
+                                <div className="grid grid-cols-2 md:grid-cols-6 gap-4 text-center py-4">
+                                    {prayerTimes.map((prayer, index) => (
+                                        <div key={index} className="flex flex-col items-center">
+                                            <p className="font-serif text-lg md:text-2xl font-bold">{prayer.name}</p>
+                                            <p className="text-sm md:text-base font-semibold">{prayer.time}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </section>
+            <section>
+                <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-24 max-w-[1500px] mx-auto py-12'>
+                          
                            <div className='justify-center items-center m-auto py-2'>
                                <p className='text-yellow-500 text-2xl '>Welcome To Islam</p>
                                <h1 className='text-5xl mt-8 font-bold'>History of islam</h1>
@@ -27,8 +47,13 @@ const History = () => {
                                </div>
            
            
+                    </div>
+                    <div>
+                               <Image src="/asset/slide1.webp" alt="" width={4000} height={4000} className="md:w-4/6 sm:w-40  justify-center items-center  m-auto" />
                            </div>
-                       </div></section> 
+                </div></section>
+               
+            <AboutUS />
         </>
     );
 };
