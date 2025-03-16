@@ -1,6 +1,8 @@
 import AboutUS from '@/app/about/page';
+import EventBanner from '@/app/EventBanner/EventBanner';
 import Image from 'next/image';
 import React from 'react';
+import Cards from '../Cards/Cards';
 
 const History = () => {
     const prayerTimes = [
@@ -12,8 +14,8 @@ const History = () => {
         { name: "ISHA’A", time: "4:10 am" },
     ];
     return (
-        <>
-              <section>
+        <><div className='px-4'>
+ <section>
                             <div className="text-white bg-gradient-to-r from-green-950 to-green-900  max-w-[1500px] mx-auto w-full text-white rounded-[30px]  md:py-8 shadow-lg relative">
                                 <div className="grid grid-cols-2 md:grid-cols-6 gap-4 text-center py-4">
                                     {prayerTimes.map((prayer, index) => (
@@ -52,7 +54,12 @@ const History = () => {
                                <Image src="/asset/slide1.webp" alt="" width={4000} height={4000} className="md:w-4/6 sm:w-40  justify-center items-center  m-auto" />
                            </div>
                 </div></section>
+        </div>
+             
                
+           
+            {/* <EventBanner/> */}
+            <Cards />
             <AboutUS />
         </>
     );

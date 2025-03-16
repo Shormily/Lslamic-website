@@ -140,7 +140,7 @@ const Banner = () => {
 
         </div>
       </div>
-      <div className="md:-mt-16 sm:-mt-8 relative z-10 px-4">
+      <div className="md:-mt-16 sm:-mt-8 relative z-10 ">
         <History />
       </div>
     </div>

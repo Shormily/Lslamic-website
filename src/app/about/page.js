@@ -3,15 +3,10 @@ import React from 'react';
 import { MdOutlineWifiCalling3 } from "react-icons/md";
 
 const AboutUS = () => {
-   
-
     return (
         <>
-          
-
-
             {/* About us section */}
-            <section><div className='grid md:grid-cols-2 sm:grid-cols-1 gap-24 max-w-[1500px] mx-auto'>
+            <section><div className='grid md:grid-cols-2 sm:grid-cols-1 gap-24 max-w-[1500px] py-16 mx-auto'>
                 <div>
                     <Image src="/asset/slide3.png" alt="" width={4000} height={4000} className="md:w-3/4 sm:w-40 h-4/4 justify-center items-center md:m-1 sm:m-auto" />
                 </div>
@@ -44,12 +39,6 @@ const AboutUS = () => {
 
                 </div>
             </div></section>
-            
-            
-            <div className="md:-mt-16 sm:-mt-8 relative z-10 px-4">
-                  
-                       </div>
-
         </>
 
 
