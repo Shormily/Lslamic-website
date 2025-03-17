@@ -31,7 +31,7 @@ const Navbar = () => {
       </Link>
 
       {/* Desktop Menu */}
-      <ul className="hidden lg:flex gap-8 text-white text-2xl ">
+      <ul className="hidden lg:flex gap-8 text-white text-[18px] ">
         <li><Link href="/" className="hover:text-yellow-500">Home</Link></li>
         <li><Link href="/event" className="hover:text-yellow-500">Event</Link></li>
         <li><Link href="/service" className="hover:text-yellow-500">Service</Link></li>
