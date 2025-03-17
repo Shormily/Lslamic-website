@@ -31,13 +31,10 @@ const Navbar = () => {
       </Link>
 
       {/* Desktop Menu */}
-      <ul className="hidden lg:flex gap-8 text-white text-[19px] ">
+      <ul className="hidden lg:flex gap-8 text-white text-2xl ">
         <li><Link href="/" className="hover:text-yellow-500">Home</Link></li>
         <li><Link href="/event" className="hover:text-yellow-500">Event</Link></li>
         <li><Link href="/service" className="hover:text-yellow-500">Service</Link></li>
-        <li><Link href="/shop" className="hover:text-yellow-500">Shop</Link></li>
-        <li><Link href="/pages" className="hover:text-yellow-500">Pages</Link></li>
-        <li><Link href="/blog" className="hover:text-yellow-500">Blog</Link></li>
         <li><Link href="/contact" className="hover:text-yellow-500">Contact</Link></li>
       </ul>
 

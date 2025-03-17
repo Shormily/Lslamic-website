@@ -17,9 +17,8 @@ const HomePage = () => {
     <>
       <div className={`${creteRound.variable} font-serif`}>
         <Banner />
-        <FivePillars/>
-        <Icons />
-        
+        <FivePillars />
+        <Icons />  
       <Footer/>
       </div>
      
