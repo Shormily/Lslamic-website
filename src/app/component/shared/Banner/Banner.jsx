@@ -64,7 +64,7 @@ const Banner = () => {
               <SwiperSlide>
                 <div className="grid md:grid-cols-2 sm:grid-cols-1 md:gap-24 sm:gap-2  px-4">
                   <div className="mx-12 ">
-                    <Image src="/asset/slide2.webp" alt="" width={300} height={300} className="md:w-3/4 sm:w-40 h-4/4 justify-center items-center md:m-1 sm:m-auto" /></div>
+                    <Image src="/asset/slide2.webp" alt="" width={300} height={300} className="md:w-5/6 sm:w-40 h-4/4 justify-center items-center md:m-1 sm:m-auto" /></div>
 
                   <div className="justify-center items-center m-auto md:text-justify sm:text-center">
                     <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16 justify-center items-center md:m-1 sm:m-auto" />
@@ -80,7 +80,7 @@ const Banner = () => {
               <SwiperSlide>
                 <div className="grid md:grid-cols-2 sm:grid-cols-1 md:gap-24 sm:gap-2  px-4">
                   <div className="mx-12 ">
-                    <Image src="/asset/al.png" alt="" width={300} height={300} className="md:w-3/4 h-3/4 sm:w-40 justify-center items-center md:m-1 sm:m-auto" /></div>
+                    <Image src="/asset/al.png" alt="" width={300} height={300} className="md:w-3/4 h-5/6 sm:w-40 justify-center items-center md:m-1 sm:m-auto" /></div>
 
                   <div className="justify-center items-center m-auto md:text-justify sm:text-center">
                     <Image src="/asset/text-img.webp" alt="Kalma" width={1500} height={1500} className="w-64 h-16 justify-center items-center md:m-1 sm:m-auto" />

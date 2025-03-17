@@ -32,7 +32,7 @@ const History = () => {
                           
                            <div className='justify-center items-center m-auto py-2'>
                                <p className='text-yellow-500 text-2xl '>Welcome To Islam</p>
-                               <h1 className='text-5xl mt-8 font-bold'>History of islam</h1>
+                               <h1 className='text-5xl mt-8 font-bold'>History Of Islam</h1>
                                <p className='text-[18px] text-gray-600 py-4'>
                                Islam had a tremendous impact on world history as well as the present-day, Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
                                </p>
