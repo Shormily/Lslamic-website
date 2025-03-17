@@ -39,7 +39,7 @@ const Cards = () => {
     ];
     return (
         <>
-            <div className="relative w-full sm:h-screen  md:h-[750px] px-2 md:bg-[url('/asset/part3.jpg')] bg-cover bg-center bg-no-repeat">
+            <div className="relative w-full py-24 px-2 md:bg-[url('/asset/part3.jpg')] bg-cover bg-center bg-no-repeat ">
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 items-center justify-center m-auto gap-8 max-w-[1500px]'>
             {data.map((d) => (
                 <div className="py-10 ">
