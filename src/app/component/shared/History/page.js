@@ -1,8 +1,9 @@
-import AboutUS from '@/app/about/page';
-import EventBanner from '@/app/EventBanner/EventBanner';
+// import AboutUS from '@/app/about/page';
+// import EventBanner from '@/app/EventBanner/EventBanner';
 import Image from 'next/image';
 import React from 'react';
 import Cards from '../Cards/Cards';
+// import AboutUS from '@/app/about/page';
 
 const History = () => {
     const prayerTimes = [
@@ -61,7 +62,7 @@ const History = () => {
            
             {/* <EventBanner/> */}
             <Cards />
-            <AboutUS />
+            {/* <AboutUS/> */}
         </>
     );
 };

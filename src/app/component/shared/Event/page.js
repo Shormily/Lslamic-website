@@ -37,7 +37,7 @@ export default function Events() {
 
     return (
         <div className={`${creteRound.variable} font-serif`}>
-            <div className="bg-slate-50">
+            <div className="bg-slate-50 py-24">
             <div className=" max-w-[1500px] m-auto py-16 px-4 sm:px-6 lg:px-8 text-center ">
       <h2 className="text-lg text-orange-500 font-semibold">Our Event</h2>
       <h1 className="text-3xl font-bold text-gray-900 mt-2">

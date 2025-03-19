@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
-import AboutUS from "@/app/about/page";
+// import AboutUS from "@/app/about/page";
 import History from "../History/page";
 import { Crete_Round } from "next/font/google";
 const creteRound = Crete_Round({
