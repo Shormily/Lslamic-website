@@ -21,7 +21,7 @@ const page = () => {
             {/* Google Login */}
             <button
               className="flex items-center justify-center w-32 h-32 bg-white rounded-full shadow-md hover:bg-gray-200"
-              onClick={() => signIn("google", { callbackUrl: "https://macanical-client.vercel.app/dashboard" })}
+              onClick={() => signIn("google", { callbackUrl: "http://localhost:3000/dashboard" })}
             >
               <FcGoogle size={80} />
             </button>
@@ -29,7 +29,7 @@ const page = () => {
             {/* GitHub Login */}
             <button
               className="flex items-center justify-center w-32 h-32 bg-white rounded-full shadow-md hover:bg-gray-200"
-              onClick={() => signIn("github", { callbackUrl: "https://macanical-client.vercel.app/dashboard" })}
+              onClick={() => signIn("github", { callbackUrl: "http://localhost:3000/dashboard" })}
             >
               <FaGithub size={80} />
             </button>
