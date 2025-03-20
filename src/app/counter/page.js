@@ -5,7 +5,6 @@ const CounterPage = () => {
     return (
         <>
             <Counter />
-            bujhlm
         </>
     );
 };
