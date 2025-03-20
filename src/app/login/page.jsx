@@ -32,6 +32,7 @@ const page = () => {
               onClick={() => signIn("github", { callbackUrl: "http://localhost:3000/dashboard" })}
             >
               <FaGithub size={80} />
+              
             </button>
           </div>
         </div>
