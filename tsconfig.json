@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/component/shared/Navbar.tsx", "src/app/layout.tx"  ],
+, "src/app/component/shared/Navbar.jsx", "src/app/layout.tx", "src/app/layout.jsx"  ],
   "exclude": [
     "node_modules"
   ]
