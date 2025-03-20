@@ -40,7 +40,7 @@ const Navbar = () => {
             <li><Link href="/" className="hover:text-yellow-500">Home</Link></li>
             <li><Link href="/event" className="hover:text-yellow-500">Event</Link></li>
             <li><Link href="/contact" className="hover:text-yellow-500">Contact</Link></li>
-            {session?.user ? (
+            {/* {session?.user ? (
               <li>
                 <button onClick={() => signOut()} className="hover:text-yellow-500">
                   Log Out
@@ -52,7 +52,7 @@ const Navbar = () => {
                   Log In
                 </button>
               </li>
-            )}
+            )} */}
           </ul>
 
           {/* Icons */}
@@ -81,7 +81,7 @@ const Navbar = () => {
             <li><Link href="/" className="block hover:text-green-700">Home</Link></li>
             <li><Link href="/event" className="block hover:text-green-700">Event</Link></li>
             <li><Link href="/contact" className="block hover:text-green-700">Contact</Link></li>
-            {session?.user ? (
+            {/* {session?.user ? (
               <li>
                 <button onClick={() => signOut()} className="hover:text-green-700">
                   Log Out
@@ -93,7 +93,7 @@ const Navbar = () => {
                   Log In
                 </button>
               </li>
-            )}
+            )} */}
           </ul>
         </div>
       </div>
